@@ -1,0 +1,39 @@
+disabled_rules:
+  - trailing_comma
+
+opt_in_rules:
+  - empty_count
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - sorted_imports
+
+included:
+  - FanScope
+  - Packages/FanScopeKit/Sources
+  - Packages/FanScopeKit/Tests
+
+excluded:
+  - .build
+  - DerivedData
+
+line_length:
+  warning: 120
+  error: 150
+
+type_body_length:
+  warning: 300
+  error: 450
+
+function_body_length:
+  warning: 50
+  error: 80
+
+identifier_name:
+  min_length:
+    warning: 2
+  excluded:
+    - id
+    - x
+    - y
