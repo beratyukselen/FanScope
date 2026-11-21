@@ -3,25 +3,35 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            Tab("Markets", systemImage: "chart.line.uptrend.xyaxis") {
+            Tab("tab.markets", systemImage: "chart.line.uptrend.xyaxis") {
                 NavigationStack {
                     ContentUnavailableView(
-                        "Markets",
+                        "tab.markets",
                         systemImage: "chart.bar.xaxis",
-                        description: Text("Live TRY fan token prices and supply metrics will appear here.")
+                        description: Text("markets.placeholder.description")
                     )
                     .navigationTitle("FanScope")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            LanguageMenuButton()
+                        }
+                    }
                 }
             }
 
-            Tab("Watchlist", systemImage: "star.fill") {
+            Tab("tab.watchlist", systemImage: "star.fill") {
                 NavigationStack {
                     ContentUnavailableView(
-                        "Watchlist",
+                        "tab.watchlist",
                         systemImage: "star",
-                        description: Text("Track favorite fan tokens and target TRY prices.")
+                        description: Text("watchlist.placeholder.description")
                     )
-                    .navigationTitle("Watchlist")
+                    .navigationTitle("tab.watchlist")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            LanguageMenuButton()
+                        }
+                    }
                 }
             }
         }

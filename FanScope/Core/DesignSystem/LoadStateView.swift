@@ -2,9 +2,9 @@ import SwiftUI
 
 struct LoadStateView<Value: Sendable, Content: View>: View {
     let state: LoadState<Value>
-    let emptyTitle: String
+    let emptyTitle: LocalizedStringKey
     let emptySystemImage: String
-    let emptyDescription: String
+    let emptyDescription: LocalizedStringKey
     let onRetry: () -> Void
     @ViewBuilder let content: (Value) -> Content
 
@@ -24,11 +24,11 @@ struct LoadStateView<Value: Sendable, Content: View>: View {
             )
         case .failed(let message):
             ContentUnavailableView {
-                Label("Unable to Load", systemImage: "exclamationmark.triangle")
+                Label("error.unable_to_load", systemImage: "exclamationmark.triangle")
             } description: {
                 Text(message)
             } actions: {
-                Button("Try Again", action: onRetry)
+                Button("action.try_again", action: onRetry)
                     .buttonStyle(.borderedProminent)
             }
         }

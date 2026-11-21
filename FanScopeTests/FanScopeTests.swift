@@ -14,3 +14,12 @@ struct LoadStateTests {
         #expect(loaded.value == ["FB", "GAL"])
     }
 }
+
+@Suite("AppLanguage")
+struct AppLanguageTests {
+    @Test("Maps explicit language selections to expected locale identifiers")
+    func localeIdentifiers() {
+        #expect(AppLanguage.english.locale.identifier == "en")
+        #expect(AppLanguage.turkish.locale.identifier == "tr")
+    }
+}
