@@ -1,3 +1,4 @@
+import FanScopeKit
 import Testing
 @testable import FanScope
 
