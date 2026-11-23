@@ -25,9 +25,9 @@ public struct OnChainFlowClassifier: Sendable {
             kind: kind,
             amount: transfer.amount,
             fromAddress: transfer.fromAddress,
-            fromLabel: fromWallet?.label,
+            fromLabel: fromWallet?.label ?? transfer.fromExternalLabel,
             toAddress: transfer.toAddress,
-            toLabel: toWallet?.label,
+            toLabel: toWallet?.label ?? transfer.toExternalLabel,
             network: transfer.network
         )
     }

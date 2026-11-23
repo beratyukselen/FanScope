@@ -15,6 +15,8 @@ public struct RawTokenTransfer: Hashable, Sendable {
     public let timestamp: Date
     public let fromAddress: String
     public let toAddress: String
+    public let fromExternalLabel: String?
+    public let toExternalLabel: String?
     public let amount: Double
     public let explicitType: String?
     public let network: BlockchainNetwork
@@ -25,6 +27,8 @@ public struct RawTokenTransfer: Hashable, Sendable {
         timestamp: Date,
         fromAddress: String,
         toAddress: String,
+        fromExternalLabel: String? = nil,
+        toExternalLabel: String? = nil,
         amount: Double,
         explicitType: String? = nil,
         network: BlockchainNetwork
@@ -34,6 +38,8 @@ public struct RawTokenTransfer: Hashable, Sendable {
         self.timestamp = timestamp
         self.fromAddress = fromAddress
         self.toAddress = toAddress
+        self.fromExternalLabel = fromExternalLabel
+        self.toExternalLabel = toExternalLabel
         self.amount = amount
         self.explicitType = explicitType
         self.network = network
