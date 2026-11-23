@@ -1,22 +1,12 @@
 import SwiftUI
 
 struct MainTabView: View {
+    let container: AppContainer
+
     var body: some View {
         TabView {
             Tab("tab.markets", systemImage: "chart.line.uptrend.xyaxis") {
-                NavigationStack {
-                    ContentUnavailableView(
-                        "tab.markets",
-                        systemImage: "chart.bar.xaxis",
-                        description: Text("markets.placeholder.description")
-                    )
-                    .navigationTitle("FanScope")
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            LanguageMenuButton()
-                        }
-                    }
-                }
+                MarketListView(container: container)
             }
 
             Tab("tab.watchlist", systemImage: "star.fill") {
@@ -40,5 +30,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(container: AppContainer())
 }
