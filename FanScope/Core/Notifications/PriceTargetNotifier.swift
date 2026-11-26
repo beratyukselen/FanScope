@@ -1,19 +1,18 @@
 import FanScopeKit
 import Foundation
 import OSLog
-import UserNotifications
+@preconcurrency import UserNotifications
 
 actor PriceTargetNotifier {
     private var notifiedKeys: Set<String> = []
 
     func requestAuthorizationIfNeeded() async -> Bool {
-        let center = UNUserNotificationCenter.current()
-        let settings = await center.notificationSettings()
-        switch settings.authorizationStatus {
+        let status = await currentAuthorizationStatus()
+        switch status {
         case .authorized, .provisional, .ephemeral:
             return true
         case .notDetermined:
-            return (try? await center.requestAuthorization(options: [.alert, .sound, .badge])) ?? false
+            return await requestNotificationAuthorization()
         case .denied:
             return false
         @unknown default:
@@ -22,15 +21,14 @@ actor PriceTargetNotifier {
     }
 
     func notifyReachedTargets(in rows: [WatchlistItemRow]) async {
-        let center = UNUserNotificationCenter.current()
-        let settings = await center.notificationSettings()
-        guard settings.authorizationStatus == .authorized || settings.authorizationStatus == .provisional else {
+        let status = await currentAuthorizationStatus()
+        guard status == .authorized || status == .provisional else {
             return
         }
 
         for row in rows {
-            guard let status = row.targetStatus,
-                  status.isReached,
+            guard let targetStatus = row.targetStatus,
+                  targetStatus.isReached,
                   let target = row.entry.targetPriceTRY,
                   let current = row.token?.ticker.lastPriceTRY else {
                 continue
@@ -40,22 +38,40 @@ actor PriceTargetNotifier {
             guard !notifiedKeys.contains(dedupKey) else { continue }
             notifiedKeys.insert(dedupKey)
 
-            let content = UNMutableNotificationContent()
-            content.title = "\(row.entry.symbol) Target Reached"
-            content.body = "Current: \(FanScopeFormatter.tryPrice(current)) · Target: \(FanScopeFormatter.tryPrice(target))"
-            content.sound = .default
-
-            let request = UNNotificationRequest(
-                identifier: "fanscope.target.\(dedupKey)",
-                content: content,
-                trigger: nil
-            )
+            let title = "\(row.entry.symbol) Target Reached"
+            let body = "Current: \(FanScopeFormatter.tryPrice(current)) · Target: \(FanScopeFormatter.tryPrice(target))"
 
             do {
-                try await center.add(request)
+                try await scheduleLocalNotification(
+                    identifier: "fanscope.target.\(dedupKey)",
+                    title: title,
+                    body: body
+                )
             } catch {
                 AppLogger.ui.warning("Failed to schedule local alert for \(row.entry.symbol, privacy: .public)")
             }
         }
+    }
+
+    private nonisolated func currentAuthorizationStatus() async -> UNAuthorizationStatus {
+        await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+    }
+
+    private nonisolated func requestNotificationAuthorization() async -> Bool {
+        (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])) ?? false
+    }
+
+    private nonisolated func scheduleLocalNotification(
+        identifier: String,
+        title: String,
+        body: String
+    ) async throws {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
+        try await UNUserNotificationCenter.current().add(request)
     }
 }
