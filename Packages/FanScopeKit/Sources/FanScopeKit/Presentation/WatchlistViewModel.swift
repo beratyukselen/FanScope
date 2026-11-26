@@ -121,7 +121,9 @@ public final class WatchlistViewModel {
             try await watchlistRepository.remove(symbol: normalized)
             await load(forceRefresh: false)
         } catch {
-            AppLogger.persistence.error("Failed to remove \(normalized, privacy: .public) from watchlist: \(error.localizedDescription, privacy: .public)")
+            AppLogger.persistence.error(
+                "Failed to remove \(normalized, privacy: .public): \(error.localizedDescription, privacy: .public)"
+            )
         }
     }
 
@@ -130,7 +132,9 @@ public final class WatchlistViewModel {
             try await watchlistRepository.upsert(entry)
             await load(forceRefresh: false)
         } catch {
-            AppLogger.persistence.error("Failed to save watchlist entry for \(entry.symbol, privacy: .public): \(error.localizedDescription, privacy: .public)")
+            AppLogger.persistence.error(
+                "Failed to save \(entry.symbol, privacy: .public): \(error.localizedDescription, privacy: .public)"
+            )
         }
     }
 

@@ -349,12 +349,6 @@
         "tr" : { "stringUnit" : { "state" : "translated", "value" : "TL piyasa verileri Paribu'dan; arz ve on-chain analizler CoinGecko, Blockscout ve Routescan'den alınır." } }
       }
     },
-    "markets.placeholder.description" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Live TRY fan token prices and supply metrics will appear here." } },
-        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Canlı TL fan token fiyatları ve arz verileri burada görünecek." } }
-      }
-    },
     "markets.search.prompt" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Search token or club..." } },
@@ -455,12 +449,6 @@
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "No Watchlist Tokens" } },
         "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listen Boş" } }
-      }
-    },
-    "watchlist.placeholder.description" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Track favorite fan tokens and target TRY prices." } },
-        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Favori fan token'larını ve hedef TL fiyatlarını takip et." } }
       }
     },
     "watchlist.section.tracked" : {
