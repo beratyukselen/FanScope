@@ -38,3 +38,30 @@ final class MockOnChainRepository: OnChainRepositoryProtocol {
         try snapshotResult.withLock { $0 }.get()
     }
 }
+
+final class MockWatchlistRepository: WatchlistRepositoryProtocol {
+    private let entries: Mutex<[String: WatchlistEntry]>
+
+    init(initialEntries: [WatchlistEntry] = []) {
+        let mapped = Dictionary(
+            uniqueKeysWithValues: initialEntries.map { ($0.symbol.uppercased(), $0) }
+        )
+        self.entries = Mutex(mapped)
+    }
+
+    func fetchEntries() async throws -> [WatchlistEntry] {
+        entries.withLock { Array($0.values) }
+    }
+
+    func upsert(_ entry: WatchlistEntry) async throws {
+        entries.withLock { storage in
+            storage[entry.symbol.uppercased()] = entry
+        }
+    }
+
+    func remove(symbol: String) async throws {
+        entries.withLock { storage in
+            _ = storage.removeValue(forKey: symbol.uppercased())
+        }
+    }
+}

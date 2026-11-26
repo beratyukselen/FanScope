@@ -10,22 +10,14 @@ struct MainTabView: View {
             }
 
             Tab("tab.watchlist", systemImage: "star.fill") {
-                NavigationStack {
-                    ContentUnavailableView(
-                        "tab.watchlist",
-                        systemImage: "star",
-                        description: Text("watchlist.placeholder.description")
-                    )
-                    .navigationTitle("tab.watchlist")
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            LanguageMenuButton()
-                        }
-                    }
-                }
+                WatchlistView(container: container)
             }
+            .badge(container.watchlistViewModel.reachedTargetCount)
         }
         .tint(AppColors.accent)
+        .task {
+            await container.watchlistViewModel.load()
+        }
     }
 }
 

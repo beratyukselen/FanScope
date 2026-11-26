@@ -1,6 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "action.cancel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Vazgeç" } }
+      }
+    },
+    "action.delete" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Sil" } }
+      }
+    },
+    "action.save" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kaydet" } }
+      }
+    },
     "action.try_again" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Try Again" } },
@@ -211,6 +229,12 @@
         "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kontratı Explorer'da Aç" } }
       }
     },
+    "detail.toolbar.watch" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Toggle Watchlist" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listesine Ekle / Çıkar" } }
+      }
+    },
     "error.unable_to_load" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Unable to Load" } },
@@ -403,10 +427,154 @@
         "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listesi" } }
       }
     },
+    "watchlist.action.edit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit Target" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedefi Düzenle" } }
+      }
+    },
+    "watchlist.direction.above" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Rise To (≥)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yükseliş (≥)" } }
+      }
+    },
+    "watchlist.direction.below" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Drop To (≤)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Düşüş (≤)" } }
+      }
+    },
+    "watchlist.empty.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Star a fan token or tap + to track TRY price targets and personal notes." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Bir fan token'ı yıldızla veya + butonuna basarak hedef TL fiyatı ve kişisel not ekle." } }
+      }
+    },
+    "watchlist.empty.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Watchlist Tokens" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listen Boş" } }
+      }
+    },
     "watchlist.placeholder.description" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Track favorite fan tokens and target TRY prices." } },
         "tr" : { "stringUnit" : { "state" : "translated", "value" : "Favori fan token'larını ve hedef TL fiyatlarını takip et." } }
+      }
+    },
+    "watchlist.section.tracked" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tracked Tokens" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Edilenler" } }
+      }
+    },
+    "watchlist.sheet.current_price" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current Paribu Price" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Güncel Paribu Fiyatı" } }
+      }
+    },
+    "watchlist.sheet.direction" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Condition" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Koşul" } }
+      }
+    },
+    "watchlist.sheet.enable_alert" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Local Alert When Reached" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedefe Ulaşınca Bildirim Gönder" } }
+      }
+    },
+    "watchlist.sheet.invalid_price" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a valid positive TRY amount." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Geçerli ve pozitif bir TL tutarı gir." } }
+      }
+    },
+    "watchlist.sheet.note_placeholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Match week target, check cold wallet flows" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Örn. Derbi haftası hedefi, soğuk cüzdan çıkışını kontrol et" } }
+      }
+    },
+    "watchlist.sheet.note_section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Personal Note" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kişisel Not" } }
+      }
+    },
+    "watchlist.sheet.remove" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove from Watchlist" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listesinden Çıkar" } }
+      }
+    },
+    "watchlist.sheet.target_footer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Leave empty to watch the token without a price target." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Fiyat hedefi koymadan sadece takip etmek için boş bırakabilirsin." } }
+      }
+    },
+    "watchlist.sheet.target_placeholder" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Target Price (Optional)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedef Fiyat (Opsiyonel)" } }
+      }
+    },
+    "watchlist.sheet.target_section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TRY Price Target" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "TL Fiyat Hedefi" } }
+      }
+    },
+    "watchlist.sheet.title_add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add to Watchlist" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listesine Ekle" } }
+      }
+    },
+    "watchlist.sheet.title_edit" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Price Target & Note" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Fiyat Hedefi & Not" } }
+      }
+    },
+    "watchlist.sheet.token_picker" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fan Token" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Fan Token" } }
+      }
+    },
+    "watchlist.sheet.token_section" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Token" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Token" } }
+      }
+    },
+    "watchlist.status.offline" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Offline" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Çevrimdışı" } }
+      }
+    },
+    "watchlist.summary.reached" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Targets Reached" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedefe Ulaşan" } }
+      }
+    },
+    "watchlist.summary.tracked" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tracked Tokens" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Edilen" } }
+      }
+    },
+    "watchlist.target.reached" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Target Reached" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedefe Ulaşıldı" } }
       }
     }
   },

@@ -3,19 +3,35 @@ import SwiftUI
 
 struct TokenDetailView: View {
     @State private var viewModel: TokenDetailViewModel
-    @State private var explorerDestination: ExplorerSheetDestination?
+    let watchlistViewModel: WatchlistViewModel
+    let notifier: PriceTargetNotifier
 
-    init(viewModel: TokenDetailViewModel) {
+    @State private var explorerDestination: ExplorerSheetDestination?
+    @State private var isPresentingTargetSheet = false
+
+    init(
+        viewModel: TokenDetailViewModel,
+        watchlistViewModel: WatchlistViewModel,
+        notifier: PriceTargetNotifier
+    ) {
         self._viewModel = State(initialValue: viewModel)
+        self.watchlistViewModel = watchlistViewModel
+        self.notifier = notifier
     }
 
     private var token: FanToken { viewModel.token }
     private var movementColor: Color { AppColors.priceMovement(token.ticker.changePercent24h) }
+    private var isWatched: Bool { watchlistViewModel.isWatched(token.definition.symbol) }
+    private var existingEntry: WatchlistEntry? { watchlistViewModel.entry(for: token.definition.symbol) }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
                 priceHeaderCard
+
+                if let entry = existingEntry, let target = entry.targetPriceTRY {
+                    activeTargetBanner(entry: entry, target: target)
+                }
 
                 InteractivePriceChartView(token: token)
 
@@ -62,7 +78,26 @@ struct TokenDetailView: View {
         .navigationTitle(token.definition.symbol)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    isPresentingTargetSheet = true
+                } label: {
+                    Image(systemName: existingEntry?.targetPriceTRY != nil ? "bell.badge.fill" : "bell")
+                        .foregroundStyle(existingEntry?.targetPriceTRY != nil ? AppColors.accent : .primary)
+                        .accessibilityLabel(Text("watchlist.sheet.title_edit"))
+                }
+
+                Button {
+                    HapticFeedback.selection()
+                    Task {
+                        await watchlistViewModel.toggleWatch(symbol: token.definition.symbol)
+                    }
+                } label: {
+                    Image(systemName: isWatched ? "star.fill" : "star")
+                        .foregroundStyle(isWatched ? AppColors.warning : .primary)
+                        .accessibilityLabel(Text("detail.toolbar.watch"))
+                }
+
                 if let contractURL = token.definition.network.addressURL(address: token.definition.contractAddress) {
                     Button {
                         explorerDestination = ExplorerSheetDestination(url: contractURL)
@@ -84,6 +119,83 @@ struct TokenDetailView: View {
             SafariExplorerView(url: destination.url)
                 .ignoresSafeArea()
         }
+        .sheet(isPresented: $isPresentingTargetSheet) {
+            PriceTargetSheet(
+                fixedSymbol: token.definition.symbol,
+                currentPriceTRY: token.ticker.lastPriceTRY,
+                existingEntry: existingEntry,
+                onSave: { symbol, target, direction, note, wantsAlert in
+                    Task {
+                        if wantsAlert {
+                            _ = await notifier.requestAuthorizationIfNeeded()
+                        }
+                        await watchlistViewModel.saveTarget(
+                            symbol: symbol,
+                            targetPriceTRY: target,
+                            direction: direction,
+                            note: note
+                        )
+                        await notifier.notifyReachedTargets(in: watchlistViewModel.rows)
+                    }
+                },
+                onRemove: { symbol in
+                    Task { await watchlistViewModel.remove(symbol: symbol) }
+                }
+            )
+        }
+    }
+
+    private func activeTargetBanner(entry: WatchlistEntry, target: Decimal) -> some View {
+        let status = PriceTargetEvaluator().evaluate(
+            currentPriceTRY: token.ticker.lastPriceTRY,
+            targetPriceTRY: target,
+            direction: entry.targetDirection
+        )
+        let prefix = entry.targetDirection == .above ? "≥" : "≤"
+
+        return Button {
+            isPresentingTargetSheet = true
+        } label: {
+            HStack(spacing: 10) {
+                Image(systemName: status?.isReached == true ? "checkmark.circle.fill" : "bell.fill")
+                    .foregroundStyle(status?.isReached == true ? AppColors.positive : AppColors.accent)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("\(prefix) \(FanScopeFormatter.tryPrice(target))")
+                        .font(.subheadline.weight(.semibold))
+                        .monospacedDigit()
+                        .foregroundStyle(.primary)
+
+                    if !entry.note.isEmpty {
+                        Text(entry.note)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
+                }
+
+                Spacer()
+
+                if let status {
+                    if status.isReached {
+                        Text("watchlist.target.reached")
+                            .font(.caption2.weight(.bold))
+                            .foregroundStyle(AppColors.positive)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(AppColors.positive.opacity(0.14), in: Capsule())
+                    } else {
+                        Text(FanScopeFormatter.signedPercentage(status.distancePercentage))
+                            .font(.caption.weight(.semibold))
+                            .monospacedDigit()
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .padding(12)
+            .background(AppColors.cardBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 
     private var priceHeaderCard: some View {

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct TokenRowView: View {
     let token: FanToken
+    var isWatched: Bool = false
 
     private var movementColor: Color {
         AppColors.priceMovement(token.ticker.changePercent24h)
@@ -17,6 +18,12 @@ struct TokenRowView: View {
                     Text(token.definition.symbol)
                         .font(.headline)
                         .foregroundStyle(.primary)
+
+                    if isWatched {
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 10))
+                            .foregroundStyle(AppColors.warning)
+                    }
 
                     Text(token.definition.network.tokenStandard)
                         .font(.system(size: 10, weight: .semibold))
