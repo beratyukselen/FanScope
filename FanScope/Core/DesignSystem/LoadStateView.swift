@@ -1,3 +1,4 @@
+import FanScopeKit
 import SwiftUI
 
 struct LoadStateView<Value: Sendable, Content: View>: View {

@@ -3,162 +3,410 @@
   "strings" : {
     "action.try_again" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Try Again"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekrar Dene"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Try Again" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Tekrar Dene" } }
+      }
+    },
+    "detail.chart.24h_range" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h Price Range" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s Fiyat Aralığı" } }
+      }
+    },
+    "detail.chart.7d_trend" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "7-Day Trend (TRY)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "7 Günlük Trend (TL)" } }
+      }
+    },
+    "detail.disclaimer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Market and on-chain data are for informational purposes only and do not constitute financial advice." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Piyasa ve on-chain verileri yalnızca bilgilendirme amaçlıdır, yatırım tavsiyesi değildir." } }
+      }
+    },
+    "detail.flows.burned" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Burned" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yakılan Arz" } }
+      }
+    },
+    "detail.flows.inflow" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exchange Inflow" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Borsaya Giriş" } }
+      }
+    },
+    "detail.flows.minted" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Minted" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Basılan Arz" } }
+      }
+    },
+    "detail.flows.outflow" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cold Wallet Outflow" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Soğuk Cüzdana Çıkış" } }
+      }
+    },
+    "detail.flows.window_30d" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recent On-Chain Flows (30d)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Son 30 Günlük On-Chain Akış" } }
+      }
+    },
+    "detail.onchain.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No recent on-chain activity found." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yakın tarihli on-chain hareket bulunamadı." } }
+      }
+    },
+    "detail.onchain.filter.all" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Tümü" } }
+      }
+    },
+    "detail.onchain.filter.exchange" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Exchange Flows" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Borsa Hareketleri" } }
+      }
+    },
+    "detail.onchain.filter.mint_burn" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mint & Burn" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Arz Basım / Yakım" } }
+      }
+    },
+    "detail.onchain.no_holders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top holder distribution is unavailable." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "En büyük cüzdan dağılımı şu an alınamadı." } }
+      }
+    },
+    "detail.onchain.no_matching_events" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No transfers match this filter." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Bu filtreye uyan transfer bulunamadı." } }
+      }
+    },
+    "detail.onchain.tab.activity" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Activity" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hareketler" } }
+      }
+    },
+    "detail.onchain.tab.holders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top Holders" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Büyük Cüzdanlar" } }
+      }
+    },
+    "detail.onchain.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "On-Chain Explorer" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "On-Chain Takip" } }
+      }
+    },
+    "detail.orderbook.amount" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Amount" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Miktar" } }
+      }
+    },
+    "detail.orderbook.ask" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ask" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Satış" } }
+      }
+    },
+    "detail.orderbook.asks_pct %lld" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Asks %lld%%" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Satış %%%lld" } }
+      }
+    },
+    "detail.orderbook.bid" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bid" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Alış" } }
+      }
+    },
+    "detail.orderbook.bids_pct %lld" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bids %lld%%" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Alış %%%lld" } }
+      }
+    },
+    "detail.orderbook.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Order book is currently empty." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Emir defteri şu an boş." } }
+      }
+    },
+    "detail.orderbook.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Order Book Depth" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Emir Defteri Derinliği" } }
+      }
+    },
+    "detail.stats.high_24h" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h High" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s En Yüksek" } }
+      }
+    },
+    "detail.stats.low_24h" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h Low" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s En Düşük" } }
+      }
+    },
+    "detail.stats.volume_24h" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h Volume" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s Hacim" } }
+      }
+    },
+    "detail.supply.circulating" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Circulating Supply" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Dolaşımdaki Arz" } }
+      }
+    },
+    "detail.supply.circulating_ratio" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Circulating Ratio" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Dolaşım Oranı" } }
+      }
+    },
+    "detail.supply.holders" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Holders" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Cüzdan Sayısı" } }
+      }
+    },
+    "detail.supply.max" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Max Supply" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Maksimum Arz" } }
+      }
+    },
+    "detail.supply.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Supply & Tokenomics" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Arz & Tokenomics" } }
+      }
+    },
+    "detail.supply.total" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Total Supply" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Toplam Arz" } }
+      }
+    },
+    "detail.toolbar.contract" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "View Contract on Explorer" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Kontratı Explorer'da Aç" } }
       }
     },
     "error.unable_to_load" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unable to Load"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yüklenemedi"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unable to Load" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yüklenemedi" } }
+      }
+    },
+    "flow.kind.burn" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "BURN" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "YAKIM" } }
+      }
+    },
+    "flow.kind.inflow" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "EXCHANGE IN" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "BORSA GİRİŞ" } }
+      }
+    },
+    "flow.kind.internal" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "INTERNAL" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "İÇ TRANSFER" } }
+      }
+    },
+    "flow.kind.mint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "MINT" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "ARZ BASIMI" } }
+      }
+    },
+    "flow.kind.outflow" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "COLD OUTFLOW" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "BORSA ÇIKIŞ" } }
+      }
+    },
+    "flow.kind.transfer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TRANSFER" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "TRANSFER" } }
       }
     },
     "language.english" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "English"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "English"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "English" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "English" } }
       }
     },
     "language.picker.title" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Language"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dil"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Language" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Dil" } }
       }
     },
     "language.system" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "System Default"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sistem Dili"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System Default" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Sistem Dili" } }
       }
     },
     "language.turkish" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Türkçe"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Türkçe"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Türkçe" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Türkçe" } }
+      }
+    },
+    "markets.empty.description" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No fan token markets are currently available." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Şu an listelenecek fan token piyasası bulunamadı." } }
+      }
+    },
+    "markets.empty.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Markets" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Piyasa Bulunamadı" } }
+      }
+    },
+    "markets.filter.all" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Tümü" } }
+      }
+    },
+    "markets.filter.ecosystem" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ecosystem" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Ekosistem" } }
+      }
+    },
+    "markets.filter.european" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "European Clubs" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Avrupa Kulüpleri" } }
+      }
+    },
+    "markets.filter.national" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "National Teams" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Milli Takımlar" } }
+      }
+    },
+    "markets.filter.turkish" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Turkish Clubs" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Türk Kulüpleri" } }
+      }
+    },
+    "markets.footer.source" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TRY market data via Paribu. Supply & on-chain analytics via CoinGecko, Blockscout, and Routescan." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "TL piyasa verileri Paribu'dan; arz ve on-chain analizler CoinGecko, Blockscout ve Routescan'den alınır." } }
       }
     },
     "markets.placeholder.description" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Live TRY fan token prices and supply metrics will appear here."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Canlı TL fan token fiyatları ve arz verileri burada görünecek."
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Live TRY fan token prices and supply metrics will appear here." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Canlı TL fan token fiyatları ve arz verileri burada görünecek." } }
+      }
+    },
+    "markets.search.prompt" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search token or club..." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Token veya kulüp ara..." } }
+      }
+    },
+    "markets.section.tokens" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Fan Tokens (TRY)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Fan Token'lar (TL)" } }
+      }
+    },
+    "markets.sort.featured" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Featured" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Öne Çıkanlar" } }
+      }
+    },
+    "markets.sort.gainers" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top Gainers" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "En Çok Yükselenler" } }
+      }
+    },
+    "markets.sort.losers" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top Losers" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "En Çok Düşenler" } }
+      }
+    },
+    "markets.sort.price" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Highest Price" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "En Yüksek Fiyat" } }
+      }
+    },
+    "markets.sort.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sort" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Sırala" } }
+      }
+    },
+    "markets.sort.volume" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h Volume" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s Hacim" } }
+      }
+    },
+    "markets.summary.top_mover" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Top Mover (24h)" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Günün Lideri (24s)" } }
+      }
+    },
+    "markets.summary.volume_24h" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "24h Fan Volume" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "24s Fan Hacmi" } }
       }
     },
     "tab.markets" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markets"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Piyasalar"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Markets" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Piyasalar" } }
       }
     },
     "tab.watchlist" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Watchlist"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Takip Listesi"
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Watchlist" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Takip Listesi" } }
       }
     },
     "watchlist.placeholder.description" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Track favorite fan tokens and target TRY prices."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favori fan token'larını ve hedef TL fiyatlarını takip et."
-          }
-        }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Track favorite fan tokens and target TRY prices." } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Favori fan token'larını ve hedef TL fiyatlarını takip et." } }
       }
     }
   },
