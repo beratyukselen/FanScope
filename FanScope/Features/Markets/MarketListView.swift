@@ -41,7 +41,9 @@ struct MarketListView: View {
             }
             .navigationDestination(for: FanToken.self) { token in
                 TokenDetailView(
-                    viewModel: container.makeTokenDetailViewModel(for: token)
+                    viewModel: container.makeTokenDetailViewModel(for: token),
+                    watchlistViewModel: container.watchlistViewModel,
+                    notifier: container.priceTargetNotifier
                 )
             }
             .task {
@@ -83,7 +85,10 @@ struct MarketListView: View {
                 Section {
                     ForEach(viewModel.filteredTokens) { token in
                         NavigationLink(value: token) {
-                            TokenRowView(token: token)
+                            TokenRowView(
+                                token: token,
+                                isWatched: container.watchlistViewModel.isWatched(token.definition.symbol)
+                            )
                         }
                     }
                 } header: {
