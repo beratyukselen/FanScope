@@ -112,8 +112,8 @@ public enum KnownWalletRegistry {
             ),
             KnownWallet(
                 address: "0xB383e9a85c13367C18D49dc4D6075E4e65E277A2",
-                label: "FB Reserve Vault",
-                role: .treasury
+                label: "Paribu Cold Reserve 3",
+                role: .exchangeCold
             ),
         ]
         return Dictionary(uniqueKeysWithValues: items.map { ($0.address, $0) })

@@ -56,16 +56,27 @@ public final class DefaultMarketRepository: MarketRepositoryProtocol {
             uniquingKeysWith: { first, _ in first }
         )
 
+        // CoinGecko's sparkline_in_7d is always denominated in USD regardless of vs_currency.
+        let usdToTRY = tickersByMarket["usdt_tl"].map {
+            NSDecimalNumber(decimal: $0.lastPriceTRY).doubleValue
+        }
+
         let fanTokens = catalog.compactMap { definition -> FanToken? in
             guard let ticker = tickersByMarket[definition.paribuMarket.lowercased()] else {
                 return nil
             }
             let enrichment = definition.coinGeckoID.flatMap { enrichments[$0] }
+            let rawSparkline = enrichment?.sparkline ?? []
+            let convertedSparkline: [Double] = if let rate = usdToTRY, rate > 0 {
+                rawSparkline.map { $0 * rate }
+            } else {
+                rawSparkline
+            }
             return FanToken(
                 definition: definition,
                 ticker: ticker,
                 supply: enrichment?.supply,
-                sparkline7dTRY: enrichment?.sparkline ?? []
+                sparkline7dTRY: convertedSparkline
             )
         }
 

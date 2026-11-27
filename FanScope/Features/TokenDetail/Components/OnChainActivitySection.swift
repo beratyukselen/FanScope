@@ -170,11 +170,12 @@ struct OnChainActivitySection: View {
                             }
                         } label: {
                             HStack(spacing: 10) {
-                                Text("#\(index + 1)")
+                                Text(verbatim: "#\(index + 1)")
                                     .font(.caption.weight(.bold))
                                     .monospacedDigit()
                                     .foregroundStyle(.secondary)
-                                    .frame(width: 24, alignment: .leading)
+                                    .lineLimit(1)
+                                    .frame(width: 30, alignment: .leading)
 
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(holder.label ?? FanScopeFormatter.shortenedAddress(holder.address))

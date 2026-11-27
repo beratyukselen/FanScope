@@ -146,4 +146,56 @@ struct DefaultMarketRepositoryTests {
         #expect(book.bids[0].priceTRY == Decimal(string: "9.51"))
         #expect(book.asks[0].amount == 5001)
     }
+
+    @Test("Converts CoinGecko USD sparklines to TRY using Paribu usdt_tl rate")
+    func convertsSparklineUsingUSDTRate() async throws {
+        let paribuWithUSDT = Data(#"""
+        [
+          {
+            "market": "usdt_tl",
+            "last": "50.00",
+            "change": "0.10",
+            "percentage": "0.20",
+            "high": "50.20",
+            "low": "49.80",
+            "volume": "1000000",
+            "pair_volume": "50000000"
+          },
+          {
+            "market": "gal_tl",
+            "last": "40.50",
+            "change": "0.50",
+            "percentage": "1.25",
+            "high": "41.00",
+            "low": "39.80",
+            "volume": "500000",
+            "pair_volume": "20000000"
+          }
+        ]
+        """#.utf8)
+
+        let cgUSD = Data(#"""
+        [
+          {
+            "id": "galatasaray-fan-token",
+            "symbol": "gal",
+            "circulating_supply": 9119350.0,
+            "total_supply": 9975000.0,
+            "max_supply": 9975000.0,
+            "sparkline_in_7d": { "price": [0.80, 0.82] }
+          }
+        ]
+        """#.utf8)
+
+        let stub = StubHTTPClient { endpoint in
+            endpoint.host == "api.paribu.com" ? paribuWithUSDT : cgUSD
+        }
+        let repository = DefaultMarketRepository(httpClient: stub)
+        let tokens = try await repository.fetchFanTokens()
+        let gal = try #require(tokens.first(where: { $0.definition.symbol == "GAL" }))
+
+        #expect(gal.sparkline7dTRY.count == 2)
+        #expect(abs(gal.sparkline7dTRY[0] - 40.0) < 0.001)
+        #expect(abs(gal.sparkline7dTRY[1] - 41.0) < 0.001)
+    }
 }
