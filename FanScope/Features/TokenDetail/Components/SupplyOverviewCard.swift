@@ -66,12 +66,16 @@ struct SupplyOverviewCard: View {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     metricCell(
                         title: "detail.flows.minted",
-                        value: "+\(FanScopeFormatter.compactTokenAmount(summary.mintedAmount))",
+                        value: summary.mintedAmount > 0
+                            ? "+\(FanScopeFormatter.compactTokenAmount(summary.mintedAmount))"
+                            : "0",
                         tint: summary.mintedAmount > 0 ? AppColors.warning : .primary
                     )
                     metricCell(
                         title: "detail.flows.burned",
-                        value: "-\(FanScopeFormatter.compactTokenAmount(summary.burnedAmount))",
+                        value: summary.burnedAmount > 0
+                            ? "-\(FanScopeFormatter.compactTokenAmount(summary.burnedAmount))"
+                            : "0",
                         tint: summary.burnedAmount > 0 ? AppColors.positive : .primary
                     )
                     metricCell(

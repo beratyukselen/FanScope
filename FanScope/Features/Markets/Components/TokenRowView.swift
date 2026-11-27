@@ -10,27 +10,22 @@ struct TokenRowView: View {
     }
 
     var body: some View {
-        HStack(spacing: 12) {
-            ClubBadgeView(definition: token.definition, size: 42)
+        HStack(spacing: 10) {
+            ClubBadgeView(definition: token.definition, size: 38)
 
-            VStack(alignment: .leading, spacing: 3) {
-                HStack(spacing: 6) {
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 5) {
                     Text(token.definition.symbol)
                         .font(.headline)
                         .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
 
                     if isWatched {
                         Image(systemName: "star.fill")
                             .font(.system(size: 10))
                             .foregroundStyle(AppColors.warning)
                     }
-
-                    Text(token.definition.network.tokenStandard)
-                        .font(.system(size: 10, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                        .background(Color.secondary.opacity(0.12), in: Capsule())
                 }
 
                 Text(token.definition.name)
@@ -38,20 +33,22 @@ struct TokenRowView: View {
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
             }
+            .layoutPriority(1)
 
-            Spacer(minLength: 8)
+            Spacer(minLength: 4)
 
             MiniSparklineView(
                 points: downsampledSparkline(token.sparkline7dTRY, maxCount: 28),
                 tintColor: movementColor
             )
-            .frame(width: 56, height: 28)
+            .frame(width: 48, height: 26)
 
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: 3) {
                 Text(FanScopeFormatter.tryPrice(token.ticker.lastPriceTRY))
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
                     .foregroundStyle(.primary)
+                    .lineLimit(1)
 
                 Text(FanScopeFormatter.signedPercentage(token.ticker.changePercent24h))
                     .font(.caption2.weight(.semibold))
@@ -60,8 +57,9 @@ struct TokenRowView: View {
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
                     .background(movementColor.opacity(0.14), in: Capsule())
+                    .lineLimit(1)
             }
-            .frame(minWidth: 78, alignment: .trailing)
+            .fixedSize(horizontal: true, vertical: false)
         }
         .padding(.vertical, 4)
         .accessibilityElement(children: .combine)

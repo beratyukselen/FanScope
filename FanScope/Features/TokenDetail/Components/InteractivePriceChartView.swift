@@ -8,8 +8,13 @@ struct InteractivePriceChartView: View {
 
     private var points: [Double] { token.sparkline7dTRY }
 
+    private var sevenDayChangePercent: Double? {
+        guard let first = points.first, let last = points.last, first > 0 else { return nil }
+        return ((last - first) / first) * 100
+    }
+
     private var movementColor: Color {
-        AppColors.priceMovement(token.ticker.changePercent24h)
+        AppColors.priceMovement(sevenDayChangePercent ?? token.ticker.changePercent24h)
     }
 
     private var yDomain: ClosedRange<Double> {
