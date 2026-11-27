@@ -20,7 +20,7 @@ struct ClubBadgeView: View {
             Text(symbol.uppercased())
                 .font(.system(size: size * 0.30, weight: .bold, design: .rounded))
                 .foregroundStyle(.white)
-                .minimumScaleFactor(0.65)
+                .minimumScaleFactor(0.45)
                 .lineLimit(1)
                 .padding(.horizontal, 4)
         }

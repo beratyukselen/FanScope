@@ -23,13 +23,18 @@ struct CoinGeckoMarketDTO: Decodable, Sendable {
 
     var supplyMetrics: SupplyMetrics {
         SupplyMetrics(
-            circulatingSupply: circulatingSupply,
-            totalSupply: totalSupply,
-            maxSupply: maxSupply
+            circulatingSupply: Self.positiveOrNil(circulatingSupply),
+            totalSupply: Self.positiveOrNil(totalSupply),
+            maxSupply: Self.positiveOrNil(maxSupply)
         )
     }
 
     var sparklinePoints: [Double] {
         sparklineIn7d?.price ?? []
+    }
+
+    private static func positiveOrNil(_ value: Double?) -> Double? {
+        guard let value, value > 0 else { return nil }
+        return value
     }
 }

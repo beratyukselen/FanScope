@@ -137,7 +137,7 @@ public enum TokenCatalog {
             network: .ethereum,
             contractAddress: "0xFB19075D77a0F111796FB259819830F4780f1429",
             decimals: 6,
-            coinGeckoID: nil,
+            coinGeckoID: "fenerbahce-token",
             badgeColors: ClubColorPalette(
                 primary: RGBColor(red: 0.96, green: 0.78, blue: 0.08),
                 secondary: RGBColor(red: 0.05, green: 0.16, blue: 0.44)
@@ -199,8 +199,22 @@ public enum TokenCatalog {
                 secondary: RGBColor(red: 0.96, green: 0.76, blue: 0.08)
             )
         ),
+        TokenDefinition(
+            symbol: "SAM",
+            name: "Samsunspor Fan Token",
+            paribuMarket: "sam_tl",
+            category: .turkishClub,
+            network: .chiliz,
+            contractAddress: "0xf78e9ce916a7d6b3d4facba95b9e9b8bba5df609",
+            decimals: 18,
+            coinGeckoID: "samsunspor-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.82, green: 0.08, blue: 0.12),
+                secondary: RGBColor(red: 0.24, green: 0.24, blue: 0.28)
+            )
+        ),
 
-        // Ecosystem
+        // Ecosystem, Motorsport & Esports
         TokenDefinition(
             symbol: "CHZ",
             name: "Chiliz",
@@ -213,6 +227,48 @@ public enum TokenCatalog {
             badgeColors: ClubColorPalette(
                 primary: RGBColor(red: 0.81, green: 0.05, blue: 0.24),
                 secondary: RGBColor(red: 0.52, green: 0.04, blue: 0.18)
+            )
+        ),
+        TokenDefinition(
+            symbol: "OGFAN",
+            name: "OG Fan Token",
+            paribuMarket: "ogfan_tl",
+            category: .ecosystem,
+            network: .chiliz,
+            contractAddress: "0xb3f2e39acc68f98229b2587361a8ce30acdf0442",
+            decimals: 18,
+            coinGeckoID: "og-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.08, green: 0.42, blue: 0.78),
+                secondary: RGBColor(red: 0.08, green: 0.14, blue: 0.30)
+            )
+        ),
+        TokenDefinition(
+            symbol: "ASTON",
+            name: "Aston Martin F1",
+            paribuMarket: "aston_tl",
+            category: .ecosystem,
+            network: .chiliz,
+            contractAddress: "0xf0d5de46729f4e2f28c27a98e15ef18df951ec44",
+            decimals: 18,
+            coinGeckoID: "aston-martin-cognizant-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.00, green: 0.42, blue: 0.36),
+                secondary: RGBColor(red: 0.04, green: 0.22, blue: 0.20)
+            )
+        ),
+        TokenDefinition(
+            symbol: "SAUBER",
+            name: "Stake F1 KICK Sauber",
+            paribuMarket: "sauber_tl",
+            category: .ecosystem,
+            network: .chiliz,
+            contractAddress: "0xe64c9d1471cfb5e7b03c998ac8137b441c60af6d",
+            decimals: 18,
+            coinGeckoID: "alfa-romeo-racing-orlen-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.64, green: 0.06, blue: 0.14),
+                secondary: RGBColor(red: 0.12, green: 0.14, blue: 0.18)
             )
         ),
 
@@ -357,8 +413,134 @@ public enum TokenCatalog {
                 secondary: RGBColor(red: 0.04, green: 0.34, blue: 0.62)
             )
         ),
+        TokenDefinition(
+            symbol: "OM",
+            name: "Olympique de Marseille",
+            paribuMarket: "om_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0x08cde3ab71adc228332cb774c4ecca4d664ab807",
+            decimals: 18,
+            coinGeckoID: "olympique-de-marseille-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.18, green: 0.65, blue: 0.88),
+                secondary: RGBColor(red: 0.06, green: 0.34, blue: 0.58)
+            )
+        ),
+        TokenDefinition(
+            symbol: "SPURS",
+            name: "Tottenham Hotspur",
+            paribuMarket: "spurs_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0xd699acd21011c20381e5138a430bb0d7b6e9bc7f",
+            decimals: 18,
+            coinGeckoID: "tottenham-hotspur-fc-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.08, green: 0.14, blue: 0.34),
+                secondary: RGBColor(red: 0.24, green: 0.32, blue: 0.52)
+            )
+        ),
+        TokenDefinition(
+            symbol: "BENFICA",
+            name: "SL Benfica Fan Token",
+            paribuMarket: "benfica_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0xf4c653b74929953b29b966aba99b681fb5ab69cf",
+            decimals: 18,
+            coinGeckoID: "sl-benfica-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.84, green: 0.09, blue: 0.13),
+                secondary: RGBColor(red: 0.52, green: 0.05, blue: 0.09)
+            )
+        ),
+        TokenDefinition(
+            symbol: "SEVILLA",
+            name: "Sevilla FC Fan Token",
+            paribuMarket: "sevilla_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0xa584cca6a5c46ead6ff8ef3beb8fac76364c36cb",
+            decimals: 18,
+            coinGeckoID: "sevilla-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.82, green: 0.12, blue: 0.18),
+                secondary: RGBColor(red: 0.48, green: 0.10, blue: 0.14)
+            )
+        ),
+        TokenDefinition(
+            symbol: "VCF",
+            name: "Valencia CF Fan Token",
+            paribuMarket: "vcf_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0x83d7d1df01c698b4379077af4bceb2d4af113bff",
+            decimals: 18,
+            coinGeckoID: "valencia-cf-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.94, green: 0.46, blue: 0.10),
+                secondary: RGBColor(red: 0.14, green: 0.14, blue: 0.18)
+            )
+        ),
+        TokenDefinition(
+            symbol: "AVL",
+            name: "Aston Villa Fan Token",
+            paribuMarket: "avl_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0x4f3a607bb2717683108865fc785badfa90094431",
+            decimals: 18,
+            coinGeckoID: "aston-villa-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.42, green: 0.10, blue: 0.24),
+                secondary: RGBColor(red: 0.46, green: 0.72, blue: 0.88)
+            )
+        ),
+        TokenDefinition(
+            symbol: "EFC",
+            name: "Everton Fan Token",
+            paribuMarket: "efc_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0xa84e55c2464563441cb4114372df8d5aca49fc83",
+            decimals: 18,
+            coinGeckoID: "everton-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.04, green: 0.28, blue: 0.66),
+                secondary: RGBColor(red: 0.04, green: 0.16, blue: 0.44)
+            )
+        ),
+        TokenDefinition(
+            symbol: "ASM",
+            name: "AS Monaco Fan Token",
+            paribuMarket: "asm_tl",
+            category: .europeanClub,
+            network: .chiliz,
+            contractAddress: "0x57f3d2382025cf5d6c3b126dce0360d9cf3aff49",
+            decimals: 18,
+            coinGeckoID: "as-monaco-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.84, green: 0.11, blue: 0.16),
+                secondary: RGBColor(red: 0.72, green: 0.56, blue: 0.20)
+            )
+        ),
 
         // National Teams
+        TokenDefinition(
+            symbol: "SPAIN",
+            name: "Spain National Team",
+            paribuMarket: "spain_tl",
+            category: .nationalTeam,
+            network: .chiliz,
+            contractAddress: "0x7a224b67aaa360e48402aab4ff12d89eef9b4cf8",
+            decimals: 18,
+            coinGeckoID: "spain",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.78, green: 0.10, blue: 0.14),
+                secondary: RGBColor(red: 0.92, green: 0.68, blue: 0.08)
+            )
+        ),
         TokenDefinition(
             symbol: "ARG",
             name: "Argentina Fan Token",
@@ -385,6 +567,62 @@ public enum TokenCatalog {
             badgeColors: ClubColorPalette(
                 primary: RGBColor(red: 0.76, green: 0.08, blue: 0.14),
                 secondary: RGBColor(red: 0.04, green: 0.44, blue: 0.24)
+            )
+        ),
+        TokenDefinition(
+            symbol: "ITA",
+            name: "Italy National Team",
+            paribuMarket: "ita_tl",
+            category: .nationalTeam,
+            network: .chiliz,
+            contractAddress: "0x90111a53d94efe28f34562b53f04f471522d57b3",
+            decimals: 18,
+            coinGeckoID: "italian-national-football-team-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.06, green: 0.36, blue: 0.74),
+                secondary: RGBColor(red: 0.05, green: 0.22, blue: 0.50)
+            )
+        ),
+        TokenDefinition(
+            symbol: "BELG",
+            name: "Belgium Fan Token",
+            paribuMarket: "belg_tl",
+            category: .nationalTeam,
+            network: .chiliz,
+            contractAddress: "0x6c4c9dfe8c940b51b68d00c6d76de756b252f328",
+            decimals: 18,
+            coinGeckoID: "belgium-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.78, green: 0.09, blue: 0.16),
+                secondary: RGBColor(red: 0.18, green: 0.16, blue: 0.16)
+            )
+        ),
+        TokenDefinition(
+            symbol: "SFA",
+            name: "Scotland Fan Token",
+            paribuMarket: "sfa_tl",
+            category: .nationalTeam,
+            network: .chiliz,
+            contractAddress: "0xfab24366503eb0fa8cb8fb7d1311159fd4283657",
+            decimals: 18,
+            coinGeckoID: "scotland-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.04, green: 0.20, blue: 0.46),
+                secondary: RGBColor(red: 0.14, green: 0.38, blue: 0.68)
+            )
+        ),
+        TokenDefinition(
+            symbol: "SAFA",
+            name: "South Africa Fan Token",
+            paribuMarket: "safa_tl",
+            category: .nationalTeam,
+            network: .chiliz,
+            contractAddress: "0xf81aa505df80278fc4cf2b050086f678d48bddce",
+            decimals: 18,
+            coinGeckoID: "south-africa-fan-token",
+            badgeColors: ClubColorPalette(
+                primary: RGBColor(red: 0.04, green: 0.46, blue: 0.30),
+                secondary: RGBColor(red: 0.90, green: 0.68, blue: 0.10)
             )
         ),
     ]
